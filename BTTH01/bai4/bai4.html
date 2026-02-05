@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <style>
+        /* 1. CÀI ĐẶT CƠ BẢN */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px; /* Chữ nhỏ giống trong ảnh */
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        /* Khung bao ngoài cùng (tờ giấy trắng) */
+        .form-container {
+            background-color: white;
+            width: 650px;
+            padding: 20px 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Tiêu đề từng phần (có gạch chân) */
+        h3 {
+            font-size: 14px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* 2. CẤU TRÚC BẢNG (để chia cột thẳng hàng) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        td {
+            padding-bottom: 8px; /* Khoảng cách giữa các dòng */
+            vertical-align: top; /* Căn chữ lên trên cùng */
+        }
+
+        /* Cột bên trái (Nhãn) */
+        .col-label {
+            width: 160px;
+            font-weight: bold;
+            font-size: 12px;
+            color: #333;
+        }
+
+        /* Ô nhập liệu chung */
+        input[type="text"], input[type="email"], select {
+            width: 98%; /* Gần full ô */
+            padding: 3px;
+            border: 1px solid #7f9db9; /* Màu viền xanh nhạt giống Win XP cũ */
+            height: 22px;
+            box-sizing: border-box;
+        }
+
+        /* Phần Gender (Radio button dọc) */
+        .gender-group label {
+            display: block; /* Xuống dòng */
+            font-weight: normal;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        /* 3. PHẦN THANH CÔNG CỤ GIẢ (Toolbar) */
+        .editor-box {
+            border: 1px solid #ccc;
+        }
+        .toolbar {
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+            border-bottom: 1px solid #ccc;
+            padding: 3px;
+        }
+        /* Tạo mấy cái nút giả B, I, U */
+        .icon {
+            display: inline-block;
+            border: 1px solid transparent;
+            padding: 0 4px;
+            cursor: pointer;
+            font-family: serif;
+            font-weight: bold;
+            color: #555;
+        }
+        .icon:hover { border: 1px solid #999; background: white; }
+        
+        textarea {
+            width: 98%;
+            border: none;
+            height: 80px;
+            resize: none;
+            font-family: Times New Roman, serif;
+            font-size: 14px;
+            padding: 5px;
+            outline: none;
+        }
+
+        /* 4. PHẦN CAPTCHA */
+        .captcha {
+            font-family: "Courier New", monospace;
+            font-size: 26px;
+            letter-spacing: 6px; /* Giãn chữ ra cho giống captcha */
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+            /* Tạo hiệu ứng chấm chấm giả bằng css */
+            background-image: radial-gradient(#000 1px, transparent 0);
+            background-size: 3px 3px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent; 
+            /* Nếu trình duyệt cũ không hỗ trợ màu trong suốt thì dùng màu xám */
+            color: #666; 
+        }
+
+        /* 5. PHẦN CUỐI (Footer) */
+        .footer {
+            margin-top: 20px;
+            border-top: 1px solid #999;
+            padding-top: 10px;
+            overflow: hidden; /* Để clear float */
+        }
+
+        .btn {
+            height: 25px;
+            padding: 0 15px;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 2px;
+        }
+        
+        .btn-black {
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .btn-grey {
+            background-color: #555;
+            color: white;
+        }
+
+        .nav-btn {
+            background-color: #555;
+            color: white;
+            width: 25px;
+            padding: 0;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+
+    <h3>Basic Info</h3>
+    <table>
+        <tr>
+            <td class="col-label">Employee ID</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td class="col-label">Last Name</td>
+            <td>Dodsworth</td>
+        </tr>
+        <tr>
+            <td class="col-label">First Name</td>
+            <td><input type="text" value="Anne"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Gender</td>
+            <td class="gender-group">
+                <label><input type="radio" name="sex"> Male</label>
+                <label><input type="radio" name="sex"> Female</label>
+                <label><input type="radio" name="sex"> XXX</label>
+                <label><input type="radio" name="sex" checked> ZZZ</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-label">Title</td>
+            <td><input type="text" value="Sales Representative"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Suffix</td>
+            <td><input type="text" value="Ms."></td>
+        </tr>
+        <tr>
+            <td class="col-label">BirthDate</td>
+            <td><input type="text" value="1969-07-02 00:00:00"></td>
+        </tr>
+        <tr>
+            <td class="col-label">HireDate</td>
+            <td><input type="text" value="1994-11-15 00:00:00"></td>
+        </tr>
+        <tr>
+            <td class="col-label">SSN # (if applicable)</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Reports To</td>
+            <td>
+                <select style="width: auto;">
+                    <option>Buchanan</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Contact Info</h3>
+    <table>
+        <tr>
+            <td class="col-label">Email</td>
+            <td><input type="email" placeholder="name@example.com" style="color:#999"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Address</td>
+            <td><input type="text" value="7 Houndstooth Rd."></td>
+        </tr>
+        <tr>
+            <td class="col-label">City</td>
+            <td><input type="text" value="London"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Region</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Postal Code</td>
+            <td><input type="text" value="WG2 7LT"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Country</td>
+            <td>
+                <select style="width: 150px;">
+                    <option>Russian Federation</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-label">US Home Phone</td>
+            <td><input type="text" value="(234)234-2342"></td>
+        </tr>
+        <tr>
+            <td class="col-label">Photo</td>
+            <td><input type="text" value="EmpID9.bmp"></td>
+        </tr>
+    </table>
+
+    <h3>Optional Info</h3>
+    <table>
+        <tr>
+            <td class="col-label">Notes</td>
+            <td>
+               <div class="editor-box">
+    <img src="images/editor.png" alt="Editor screenshot" style="width:100%;">
+
+
+    <textarea>
+Anne has a BA degree in English from St. Lawrence College...
+    </textarea>
+</div>
+
+            </td>
+        </tr>
+        <tr>
+            <td class="col-label">Preferred Shift</td>
+            <td>
+                <label><input type="checkbox"> Regular</label><br>
+                <label><input type="checkbox" checked> Gravy Yard</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-label">Active?</td>
+            <td><input type="checkbox" checked></td>
+        </tr>
+        <tr>
+            <td class="col-label">Are you human?</td>
+            <td>
+                <div class="captcha">TIDAWO</div>
+                <div style="font-size: 11px; margin-bottom: 2px;">Click to change</div>
+                <input type="text">
+            </td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        <div style="float: left;">
+            <button class="btn nav-btn">&lt;</button>
+            <button class="btn nav-btn">&gt;</button>
+        </div>
+        <div style="float: right;">
+            <button class="btn btn-black">Submit</button>
+            <button class="btn btn-grey">Cancel</button>
+        </div>
+    </div>
+    <div style="font-size: 11px; margin-top: 5px;">* required</div>
+
+</div>
+
+</body>
+</html>
