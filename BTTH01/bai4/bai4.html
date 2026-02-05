@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Employee Form</title>
     <style>
-        /* 1. CÀI ĐẶT CƠ BẢN */
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px; /* Chữ nhỏ giống trong ảnh */
@@ -14,7 +13,7 @@
             padding-top: 20px;
         }
 
-        /* Khung bao ngoài cùng (tờ giấy trắng) */
+       
         .form-container {
             background-color: white;
             width: 650px;
@@ -23,7 +22,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        /* Tiêu đề từng phần (có gạch chân) */
         h3 {
             font-size: 14px;
             border-bottom: 1px solid #999;
@@ -33,18 +31,16 @@
             color: #333;
         }
 
-        /* 2. CẤU TRÚC BẢNG (để chia cột thẳng hàng) */
         table {
             width: 100%;
             border-collapse: collapse;
         }
         
         td {
-            padding-bottom: 8px; /* Khoảng cách giữa các dòng */
-            vertical-align: top; /* Căn chữ lên trên cùng */
+            padding-bottom: 8px; 
+            vertical-align: top; 
         }
 
-        /* Cột bên trái (Nhãn) */
         .col-label {
             width: 160px;
             font-weight: bold;
@@ -52,24 +48,23 @@
             color: #333;
         }
 
-        /* Ô nhập liệu chung */
         input[type="text"], input[type="email"], select {
-            width: 98%; /* Gần full ô */
+            width: 98%; 
             padding: 3px;
-            border: 1px solid #7f9db9; /* Màu viền xanh nhạt giống Win XP cũ */
+            border: 1px solid #7f9db9; 
             height: 22px;
             box-sizing: border-box;
         }
 
-        /* Phần Gender (Radio button dọc) */
+      
         .gender-group label {
-            display: block; /* Xuống dòng */
+            display: block;
             font-weight: normal;
             font-size: 12px;
             margin-bottom: 2px;
         }
 
-        /* 3. PHẦN THANH CÔNG CỤ GIẢ (Toolbar) */
+        
         .editor-box {
             border: 1px solid #ccc;
         }
@@ -78,7 +73,7 @@
             border-bottom: 1px solid #ccc;
             padding: 3px;
         }
-        /* Tạo mấy cái nút giả B, I, U */
+       
         .icon {
             display: inline-block;
             border: 1px solid transparent;
@@ -101,30 +96,30 @@
             outline: none;
         }
 
-        /* 4. PHẦN CAPTCHA */
+      
         .captcha {
             font-family: "Courier New", monospace;
             font-size: 26px;
-            letter-spacing: 6px; /* Giãn chữ ra cho giống captcha */
+            letter-spacing: 6px; 
             font-weight: bold;
             margin-bottom: 5px;
             color: #444;
-            /* Tạo hiệu ứng chấm chấm giả bằng css */
+          
             background-image: radial-gradient(#000 1px, transparent 0);
             background-size: 3px 3px;
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent; 
-            /* Nếu trình duyệt cũ không hỗ trợ màu trong suốt thì dùng màu xám */
+            
             color: #666; 
         }
 
-        /* 5. PHẦN CUỐI (Footer) */
+     
         .footer {
             margin-top: 20px;
             border-top: 1px solid #999;
             padding-top: 10px;
-            overflow: hidden; /* Để clear float */
+            overflow: hidden; 
         }
 
         .btn {
@@ -305,4 +300,5 @@ Anne has a BA degree in English from St. Lawrence College...
 </div>
 
 </body>
+
 </html>
