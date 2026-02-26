@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .form-ngoai {
+            border: 1px solid #333;
+            padding: 30px;
+            width: 700px;
+            margin: 50px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .hang-doc {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hang-ngang {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hang-ngang input {
+            flex: 1;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        .duoi-cung {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #7dd3fc;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        span {
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-ngoai">
+        <h3 style="color: #555; margin-top: 0;">Get in touch with us by filling contact form below</h3>
+
+        <div class="hang-doc">
+            <div class="hang-ngang">
+                <input type="text" placeholder="* Enter your full name">
+                <input type="text" placeholder="* Enter your email address">
+            </div>
+
+            <input type="text" placeholder="Enter your subject">
+
+            <textarea placeholder="* Your message here..."></textarea>
+
+            <div class="duoi-cung">
+                <button>Send message</button>
+                <span>* Please fill all required form field, thanks!</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
