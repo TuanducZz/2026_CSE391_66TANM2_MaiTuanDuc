@@ -445,10 +445,15 @@ $("#btnHello").on("click", function () {
 
 > Câu hỏi:
 > - Điểm giống nhau về chức năng giữa 2 đoạn code trên là gì?
+Cả hai đoạn code đều bắt sự kiện click của nút btnHello và hiển thị thông báo (alert) khi người dùng nhấn vào nút.
 > - Điểm khác nhau về cú pháp là gì (`document.getElementById` vs `$("#id")`, `addEventListener` vs `.on`)?
+Trong JavaScript thuần, để lấy phần tử cần dùng document.getElementById("btnHello"), còn trong jQuery chỉ cần dùng cú pháp ngắn gọn $("#btnHello").
+
+Để bắt sự kiện, JavaScript thuần dùng addEventListener("click", ...), còn jQuery dùng .on("click", ...).
 > - Em hãy tra cứu nhanh “What is jQuery used for?” và ghi 2 ý chính:
->   1. ................................................................
->   2. ................................................................
+>   1. jQuery được dùng để thao tác DOM dễ dàng hơn (thay đổi nội dung, style, hoặc phần tử HTML).
+
+    2.jQuery giúp xử lý sự kiện, animation và AJAX đơn giản hơn so với JavaScript thuần.
 
 ---
 
@@ -457,9 +462,9 @@ $("#btnHello").on("click", function () {
 > 1. Sau buổi lab, em tò mò nhất về phần nào của JavaScript/DOM?
 > 2. Em muốn tự làm thêm tính năng gì trên trang web (vd: bộ đếm, đổi theme, pop-up, mini game, …)?
 > 3. Em đánh giá mức độ hiểu của mình về:
->    - Biến \& kiểu dữ liệu: [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
->    - If/else \& hàm:       [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
->    - DOM \& sự kiện:       [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
+>    - Biến \& kiểu dữ liệu: [ ] Chưa hiểu  [ ] Tạm ổn  [ x] Khá rõ
+>    - If/else \& hàm:       [ ] Chưa hiểu  [ ] Tạm ổn  [x ] Khá rõ
+>    - DOM \& sự kiện:       [ ] Chưa hiểu  [ ] Tạm ổn  [ x] Khá rõ
 
 ---
 
