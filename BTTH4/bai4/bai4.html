@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2.2 - Form Đặt Hàng Nâng Cao</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        
+        input, select, textarea {
+            width: 300px; padding: 8px; border: 1px solid #ccc;
+        }
+        
+        /* Báo lỗi */
+        .error-text { color: red; font-size: 13px; display: none; margin-top: 5px; }
+        .input-error { border: 2px solid red !important; }
+        
+        /* Chỗ hiển thị tiền và đếm chữ */
+        #totalPrice { color: green; font-size: 18px; font-weight: bold; }
+        #charCount { font-size: 12px; color: gray; }
+        .text-red { color: red !important; font-weight: bold; }
+
+        /* Hộp xác nhận đơn hàng (ẩn mặc định) */
+        #confirmBox {
+            display: none; 
+            padding: 20px; 
+            border: 2px dashed #4CAF50; 
+            background: #f9fff9; 
+            width: 320px; 
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Đặt hàng trực tuyến</h2>
+    
+    <form id="orderForm">
+        <div class="form-group">
+            <label>Sản phẩm:</label>
+            <select id="product">
+                <option value="">-- Chọn sản phẩm --</option>
+                <option value="ao">Áo sơ mi (150,000đ)</option>
+                <option value="quan">Quần Jean (200,000đ)</option>
+            </select>
+            <span class="error-text" id="productErr">Vui lòng chọn 1 sản phẩm.</span>
+        </div>
+
+        <div class="form-group">
+            <label>Số lượng:</label>
+            <input type="number" id="qty" min="1" max="99" value="1">
+            <span class="error-text" id="qtyErr">Số lượng từ 1 đến 99.</span>
+        </div>
+
+        <div class="form-group">
+            <label>Tổng tiền dự kiến:</label>
+            <span id="totalPrice">0 VNĐ</span>
+        </div>
+
+        <div class="form-group">
+            <label>Ngày giao hàng:</label>
+            <input type="date" id="deliveryDate">
+            <span class="error-text" id="dateErr">Không chọn ngày ở quá khứ hoặc quá 30 ngày.</span>
+        </div>
+
+        <div class="form-group">
+            <label>Ghi chú (Tối đa 200 chữ):</label>
+            <textarea id="notes" rows="3" placeholder="Ghi chú thêm..."></textarea>
+            <br>
+            <span id="charCount">0/200</span>
+        </div>
+
+        <button type="submit" style="padding: 10px 20px;">Tiến hành đặt hàng</button>
+    </form>
+
+    <div id="confirmBox">
+        <h3>Xác nhận đơn hàng</h3>
+        <p id="summaryText"></p>
+        <button id="btnConfirm" style="background: green; color: white; padding: 5px 10px;">Xác nhận Mua</button>
+        <button id="btnCancel" style="padding: 5px 10px;">Hủy bỏ</button>
+    </div>
+
+    <script src="bai2-2.js"></script>
+
+</body>
+</html>

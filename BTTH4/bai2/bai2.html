@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1.2 - Bộ Lọc & Tìm Kiếm</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .controls { background: #f9f9f9; padding: 15px; margin-bottom: 20px; border: 1px solid #ccc; }
+        input, select { padding: 8px; margin-right: 10px; margin-bottom: 10px; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        
+        /* Cột điểm có thêm con trỏ chuột bàn tay để biết là bấm được */
+        #scoreHeader { cursor: pointer; color: blue; }
+        #scoreHeader:hover { text-decoration: underline; }
+        
+        .bg-yellow { background-color: #fff3cd; }
+    </style>
+</head>
+<body>
+
+    <h2>Tìm kiếm và Lọc dữ liệu</h2>
+    
+    <div class="controls">
+        <strong>Bộ lọc: </strong>
+        <input type="text" id="searchInput" placeholder="Tìm tên sinh viên...">
+        
+        <select id="rankFilter">
+            <option value="all">Tất cả xếp loại</option>
+            <option value="Giỏi">Giỏi</option>
+            <option value="Khá">Khá</option>
+            <option value="Trung bình">Trung bình</option>
+            <option value="Yếu">Yếu</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th id="scoreHeader">Điểm ↕ (Bấm để sắp xếp)</th>
+                <th>Xếp loại</th>
+            </tr>
+        </thead>
+        <tbody id="studentBody">
+            </tbody>
+    </table>
+
+    <script src="bai1-2.js"></script>
+
+</body>
+</html>
